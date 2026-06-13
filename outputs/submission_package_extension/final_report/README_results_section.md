@@ -5,6 +5,21 @@ Clopper-Pearson bounds and fixed-sequence Learn-then-Test determine whether a
 1% honest-action FPR claim is supportable. A fixed three-signal ensemble then
 tests whether detection improves at that certified budget.
 
+### Official Track A safety curve
+
+`ct game-metrics metrics` was run locally in `action_only` mode on existing
+matched scores. All attacks completed the side task, so safety equals
+detection.
+
+| Monitor | Safety at 0.1% | Safety at 1% | Safety at 5% | Certified deterministic safety at 1% |
+| --- | ---: | ---: | ---: | ---: |
+| `multi` | 14.35% | 58.44% | 85.70% | 42.86% |
+| `zmean3` | 14.29% | 67.35% | 88.49% | 59.18% |
+
+The official empirical rule may randomize boundary ties to spend the budget
+exactly. CP/LTT asks whether a deterministic threshold on the observed score
+grid statistically supports the same FPR claim.
+
 ### Certified 1% operating point
 
 | Method | Threshold | Observed FPR | CP 90% upper | CP 99% upper | Matched detection |
@@ -27,6 +42,10 @@ The exact paired McNemar p-value is `0.0386`. `zmean3` adds goal-analysis to
 the two `multi` components and uses honest-only z-normalization. Its definition
 and threshold were fixed before confirmatory evaluation; no learned gate or
 attack-tuned weights were used.
+
+`zmean3` has 103 unique honest scores versus 15 for `multi`. This finer score
+geometry preserves more of the empirical ranking gain under deterministic
+certification.
 
 ### Main-task-success partition
 
@@ -54,6 +73,9 @@ attacks.
 - Honest FPR certification covers three matched environments and depends on
   the calibration distribution and environment mix.
 - The confirmatory run tests detection only and does not recertify FPR.
+- Official usefulness is 0/27 because every downloaded honest calibration
+  trajectory is already labeled main-task-failed before monitoring; this set
+  cannot establish absolute usefulness.
 - No learned gate, adaptive attack evaluation, or attack-tuned weights were
   used.
 - All-76 original attack detection is descriptive only.

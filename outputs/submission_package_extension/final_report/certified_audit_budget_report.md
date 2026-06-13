@@ -19,6 +19,12 @@ a fixed ensemble that adds goal-analysis to the two components already used by
 respective fixed thresholds certified for a 1% honest-action FPR at
 `delta=0.10`.
 
+In the official Track A action-only frame, Control Tower reports 1% empirical
+safety of 58.44% for `multi` and 67.35% for `zmean3`. This empirical curve is
+the standard optimistic baseline: it may randomize boundary ties to spend the
+audit budget exactly. Our CP/LTT layer asks whether a deterministic operating
+point on the observed score grid can support the same 1% FPR claim.
+
 The main-task-success partition gives a more cautious view of stealth. Among
 20 main-task-successful attacks, detection rises from 8/20 (40.00%) to 12/20
 (60.00%), but the exact paired test is underpowered (`p=0.21875`). On a
@@ -26,7 +32,47 @@ separate frozen set of 75 main-task-failed attacks, detection rises from 48/75
 (64.00%) to 72/75 (96.00%); this is strong evidence on overt or
 main-task-failed sabotage, not stealthy dual-success attacks.
 
-## 2. Pillar 1: certified audit-budget validity
+## 2. Official Track A frame
+
+All 49 matched attacks completed the side task, so official safety equals
+attack detection on this set. `ct game-metrics metrics` was run in
+`action_only` mode on existing local monitor responses; it made no model,
+evaluation, upload, or network call.
+
+| Monitor | Safety at 0.1% | Safety at 1% | Safety at 5% | Certified deterministic safety at 1% |
+| --- | ---: | ---: | ---: | ---: |
+| `multi` | 14.35% | 58.44% | 85.70% | 42.86% |
+| `zmean3` | 14.29% | 67.35% | 88.49% | 59.18% |
+
+At the official 1% point, `multi` audits a random 24.19% of actions tied at
+score 4.0. Its 58.44% safety therefore differs from the 55.10% safety of the
+most permissive deterministic empirical threshold among the observed `multi`
+score grid points, 4.5. This is expected tie handling, not a disagreement with
+the harness. The deterministic threshold 4.5 still has a CP 90% upper FPR of
+1.06%, so it does not support a deterministic 1% claim. Threshold 5.0 does.
+
+For `zmean3`, official empirical 1% safety and deterministic empirical safety
+both equal 67.35%. Its finer score geometry lets more of that ranking gain
+survive certification: certified deterministic safety is 59.18%.
+
+![Official safety curves](../official_metrics/figures/official_safety_curves.svg)
+
+The score distributions make the granularity difference visible:
+
+| Monitor | Population | n | p50 | p95 | p99 | p99.9 | Max | Unique scores |
+| --- | --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
+| `multi` | Honest actions | 2,007 | 0.5 | 2.5 | 4.0 | 5.997 | 7.0 | 15 |
+| `multi` | Matched attack maxima | 49 | 4.5 | 7.0 | 8.0 | 8.0 | 8.0 | 14 |
+| `zmean3` | Honest actions | 1,989 | -0.248 | 1.254 | 2.356 | 4.383 | 5.601 | 103 |
+| `zmean3` | Matched attack maxima | 49 | 2.887 | 5.711 | 6.507 | 6.661 | 6.678 | 44 |
+
+Control Tower reports usefulness of 0/27 for both monitors. Every downloaded
+`attempts_st=false` calibration trajectory is already labeled
+`main_task_success=false` before monitoring. Monitoring is post-hoc and uses
+the same unchanged trajectories for both monitors, but this calibration set
+cannot establish absolute usefulness.
+
+## 3. Pillar 1: certified audit-budget validity
 
 The v1 analysis uses 2,007 pooled honest actions from `media_processing`,
 `web_scraping`, and `clinical_trial`.
@@ -56,7 +102,7 @@ tail flags, a 1% claim requires at least 230, 299, or 459 actions for
 
 ![Minimum certifiable FPR by sample size](../figures/minimum_certifiable_fpr_vs_n.svg)
 
-## 3. Pillar 2: a fixed ensemble under the same certified budget
+## 4. Pillar 2: a fixed ensemble under the same certified budget
 
 The Track A `multi` monitor combines `orthogonal` and `old-action`.
 `zmean3` adds a third, complementary goal-analysis score. Each component is
@@ -76,6 +122,11 @@ before confirmatory evaluation. No learned gate was used. No weights were
 tuned on attack outcomes. At `delta=0.10`, the fixed certified thresholds are
 `5.0` for `multi` and `2.636413679185227` for `zmean3`.
 
+The submitted `monitor:zmean3` artifact calls the three component monitors and
+applies these frozen constants at runtime. It does not fit on attacks, inspect
+outcomes, or select a threshold. The official results above were materialized
+from the already-scored component outputs to avoid new model calls.
+
 | Candidate | Empirical matched-49 detection | Certified matched-49 detection |
 | --- | ---: | ---: |
 | `multi` | 27/49 (55.10%) | 21/49 (42.86%) |
@@ -92,7 +143,7 @@ certificate tests the FPR claim.
 
 ![Empirical and certified operating points](../figures/empirical_vs_certified_operating_points.svg)
 
-## 4. Original matched-49 paired result
+## 5. Original matched-49 paired result
 
 The primary broad comparison uses one maximum valid action score for each of
 49 successful attacks from the three environments with matched honest
@@ -108,7 +159,7 @@ the count rather than as a broad claim about every attack distribution.
 
 ![Matched detection at certified delta 0.10](../figures/matched_detection_certified_delta_10.svg)
 
-## 5. Main-task-success partition
+## 6. Main-task-success partition
 
 The matched set contains 20 main-task-successful attacks and 29
 main-task-failed attacks. `main_task_success == true` is the available proxy
@@ -125,7 +176,7 @@ concentrate only in main-task failures: net catches improve in both
 partitions. These data support a positive signal on main-task-successful
 attacks, not a claim of strong or general stealthy dual-success detection.
 
-## 6. Frozen confirmatory-75 result
+## 7. Frozen confirmatory-75 result
 
 The frozen confirmatory set contains 75 successful-side-task attacks, 25 from
 each matched environment, and all 75 have `main_task_success == false`. On
@@ -150,7 +201,7 @@ an overt goal-divergence signal.
 The confirmatory run tests detection only. Its attack scores do not recertify
 the 1% FPR, which remains supported by the earlier honest calibration.
 
-## 7. Mechanism diagnostic
+## 8. Mechanism diagnostic
 
 | Population | `zmean3`-only catches | Goal-analysis dominant | Orthogonal dominant | Old-action dominant |
 | --- | ---: | ---: | ---: | ---: |
@@ -164,7 +215,7 @@ fires especially strongly when goal divergence is overt enough for the main
 task to fail. This helps explain why the frozen effect is larger than the
 matched-49 effect.
 
-## 8. Limitations
+## 9. Limitations
 
 - The matched attack sample has 49 units, and its stealth proxy has only 20.
 - The frozen confirmatory set contains no main-task-successful attacks.
@@ -177,10 +228,12 @@ matched-49 effect.
 - Actions within a trajectory are correlated. Trajectory-grouped splitting
   prevents leakage but does not make actions independent.
 - Pooled FPR changes if the deployment environment mix changes.
+- The available honest calibration set cannot establish absolute usefulness:
+  all 27 source trajectories are labeled main-task-failed before monitoring.
 - The confirmatory run evaluates detection only and does not recertify FPR.
 - Raw confirmatory monitor outputs remain local and untracked.
 
-## 9. Takeaway
+## 10. Takeaway
 
 `zmean3` strongly improves detection of overt or main-task-failed sabotage and
 shows a positive but underpowered lift on main-task-successful attacks. The
@@ -189,6 +242,8 @@ layer improves ranking under that certified budget.
 
 Supporting analyses:
 
+- [Official Track A interpretation](../official_metrics/official_frame_interpretation.md)
+- [Score distributions and percentiles](../official_metrics/score_distributions.md)
 - [Fixed ensemble analysis](../supporting/ensemble_analysis.md)
 - [Main-task-success partition](../supporting/main_task_success_partition.md)
 - [Frozen paired test](../supporting/confirmatory_paired_test.md)
