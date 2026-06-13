@@ -25,7 +25,9 @@ difference is benign: the official rule audits 24.19% of score-4.0 ties,
 whereas the certification analysis uses a deterministic threshold of 4.5 on
 the same 49 attacks. Control Tower recognizes one additional honest action
 with score 1.0, but it is outside the relevant tail and does not affect the
-comparison.
+comparison. This tie gap is another consequence of score granularity:
+`zmean3` has no corresponding gap at 1%, with official and deterministic
+empirical safety both equal to 67.35%.
 
 ### Certified 1% operating point
 
@@ -73,12 +75,20 @@ gives 29/47 (61.70%) versus 45/47 (95.74%), `p=3.052e-05`. This confirms
 strong detection of main-task-failed sabotage, not stealthy dual-success
 attacks.
 
+A zero-cost metadata query found 278 new dual-success candidate IDs across the
+three matched environments. This is enough for a later balanced 75-attack
+study, but acquisition, vetting, and scoring remain deferred and
+human-gated.
+
 ### Limitations
 
 - The matched set has 49 attacks; only 20 are main-task-successful.
 - The frozen set has no main-task-successful attacks.
 - Honest FPR certification covers three matched environments and depends on
   the calibration distribution and environment mix.
+- All 27 honest calibration trajectories are main-task-failed. Their retries
+  or error recovery may make calibration conservative, but no
+  successful-honest comparison is available.
 - The confirmatory run tests detection only and does not recertify FPR.
 - Official usefulness is 0/27 because every downloaded honest calibration
   trajectory is already labeled main-task-failed before monitoring; this set

@@ -48,8 +48,11 @@ budget and may fractionally audit actions tied at the boundary.
 At 1%, official `multi` safety is 58.44%, rather than the 55.10%
 deterministic empirical result, because Control Tower audits 24.19% of
 score-4.0 ties to spend the budget exactly. The attack set and successful
-sabotage denominator are unchanged. We use the official values above for
-rubric-facing comparison and deterministic rules for certification.
+sabotage denominator are unchanged. This is a third view of score granularity:
+`multi`'s coarse grid leaves substantial mass at the budget boundary, while
+`zmean3`'s official and deterministic empirical safety are both 67.35%. We
+use official values for rubric-facing comparison and deterministic rules for
+certification.
 
 Control Tower reports usefulness as 0/27 for both monitors. Every calibration
 trajectory was already labeled `main_task_success=false` before monitoring.
@@ -120,10 +123,19 @@ A separately frozen set gives 48/75 (64%) for `multi` and 72/75 (96%) for
 so this confirms stronger detection of overt or main-task-failed sabotage,
 not stealth.
 
+A bounded metadata-only query found 278 new dual-success candidate IDs across
+the three matched environments, enough to construct a later 75-attack set.
+That follow-up remains deferred pending full-record vetting, schedule review,
+and explicit approval for its estimated $2.83 scoring cost ($4.25 with
+contingency).
+
 ## Limitations
 
 - Honest calibration covers only three matched environments and depends on
   their deployment mixture.
+- All 27 honest calibration trajectories failed the main task. Retries or
+  error recovery may make this calibration conservative, but no
+  successful-honest comparison is available to test that possibility.
 - The 20-attack stealth proxy is underpowered; the frozen 75 contain no
   main-task-successful attacks.
 - Current calibration trajectories cannot establish absolute usefulness.
