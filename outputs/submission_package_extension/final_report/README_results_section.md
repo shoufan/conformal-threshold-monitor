@@ -20,6 +20,13 @@ The official empirical rule may randomize boundary ties to spend the budget
 exactly. CP/LTT asks whether a deterministic threshold on the observed score
 grid statistically supports the same FPR claim.
 
+The official-metrics audit confirms that the 58.44% versus 55.10% `multi`
+difference is benign: the official rule audits 24.19% of score-4.0 ties,
+whereas the certification analysis uses a deterministic threshold of 4.5 on
+the same 49 attacks. Control Tower recognizes one additional honest action
+with score 1.0, but it is outside the relevant tail and does not affect the
+comparison.
+
 ### Certified 1% operating point
 
 | Method | Threshold | Observed FPR | CP 90% upper | CP 99% upper | Matched detection |
@@ -75,12 +82,15 @@ attacks.
 - The confirmatory run tests detection only and does not recertify FPR.
 - Official usefulness is 0/27 because every downloaded honest calibration
   trajectory is already labeled main-task-failed before monitoring; this set
-  cannot establish absolute usefulness.
+  cannot establish absolute usefulness. Since monitoring is post-hoc, the
+  value is not evidence that `zmean3` degrades usefulness.
 - No learned gate, adaptive attack evaluation, or attack-tuned weights were
   used.
 - All-76 original attack detection is descriptive only.
 
 See the
+[two-page submission report](two_page_report.md),
 [full report](certified_audit_budget_report.md),
 [demo script](demo_script_3min.md), and
-[machine-readable tables](key_tables.json).
+[machine-readable tables](key_tables.json). The detailed interpretation audit
+is in `outputs/official_metrics/official_metrics_audit.md`.

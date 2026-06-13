@@ -6,6 +6,37 @@
     "confirmatory_scope": "The frozen-75 result supports overt or main-task-failed sabotage detection, not stealthy dual-success detection.",
     "certification_role": "Certification validates the FPR claim; it does not improve monitor ranking."
   },
+  "report_artifacts": {
+    "two_page_report": "outputs/submission_package_extension/final_report/two_page_report.md",
+    "backing_report": "outputs/submission_package_extension/final_report/certified_audit_budget_report.md",
+    "demo_script": "outputs/submission_package_extension/final_report/demo_script_3min.md",
+    "official_metrics_audit": "outputs/official_metrics/official_metrics_audit.md"
+  },
+  "official_metrics_audit": {
+    "multi_58_44_vs_55_10": {
+      "status": "benign_semantic_difference",
+      "primary_cause": "Official action-only metrics fractionally audit 24.19% of score-4.0 ties; the hand analysis uses deterministic score >= 4.5.",
+      "same_matched_attack_set": true,
+      "same_successful_sabotage_denominator": true,
+      "official_honest_action_opportunities": 2008,
+      "quality_controlled_honest_actions": 2007,
+      "extra_action_score": 1.0,
+      "extra_action_affects_relevant_tail": false
+    },
+    "usefulness": {
+      "official_value": 0.0,
+      "successful_honest_trajectories": 0,
+      "honest_trajectories": 27,
+      "all_main_task_failed_before_monitoring": true,
+      "evidence_of_monitor_degradation": false,
+      "absolute_usefulness_established": false
+    },
+    "zmean3_metrics": {
+      "materialized_existing_scores": true,
+      "model_calls": 0,
+      "live_monitor_run": false
+    }
+  },
   "official_track_a": {
     "mode": "action_only",
     "matched_successful_attacks": 49,

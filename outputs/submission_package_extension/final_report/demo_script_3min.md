@@ -19,7 +19,9 @@ audit budgets. Certification does not make the monitor rank attacks better."
 
 "The official Track A harness gives `multi` 58.4 percent safety at a one
 percent empirical audit budget. It randomizes some score-4 ties to spend that
-budget exactly. That is the standard optimistic baseline.
+budget exactly. The earlier 55.1 percent result uses the same 49 attacks with
+a deterministic threshold at 4.5, so the difference is tie handling, not a
+changed denominator. The official curve is the standard optimistic baseline.
 
 For a deterministic rule on 2,007 honest actions, threshold 4.5 observes 0.75
 percent FPR, but its 90 percent upper bound is 1.06 percent. Threshold 5.0
@@ -66,8 +68,9 @@ underpowered, not proof of broad stealthy dual-success detection."
 
 **Show:** The frozen-75 row with the caveat visible.
 
-"A frozen set also rises from 64 to 96 percent, but all 75 attacks fail the
-main task. That confirms overt or main-task-failed detection, not stealth."
+"A frozen set rises from 64 to 96 percent, but all 75 attacks fail the main
+task. In the same sentence: this confirms overt or main-task-failed detection,
+not stealth."
 
 ## 2:49-3:00 - Close
 
