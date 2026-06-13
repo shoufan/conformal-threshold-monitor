@@ -1,6 +1,8 @@
 from __future__ import annotations
 
+import ast
 import math
+from pathlib import Path
 
 from monitor_cert.zmean3 import (
     CONTROL_TOWER_OFFSET,
@@ -38,3 +40,15 @@ def test_combined_helper_matches_raw_then_encode() -> None:
     raw = raw_zmean3(6.0, 4.0, 7.0)
     encoded = control_tower_zmean3(6.0, 4.0, 7.0)
     assert math.isclose(encoded, encode_control_tower_score(raw), abs_tol=1e-12)
+
+
+def test_submission_monitor_exports_cli_attribute() -> None:
+    root = Path(__file__).parents[1]
+    source = (root / "monitor.py").read_text()
+    packaged_source = (root / "outputs/submission_package_extension/monitor.py").read_text()
+    functions = {
+        node.name for node in ast.walk(ast.parse(source)) if isinstance(node, ast.FunctionDef)
+    }
+
+    assert "zmean3" in functions
+    assert source == packaged_source

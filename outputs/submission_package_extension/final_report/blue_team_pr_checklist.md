@@ -99,13 +99,19 @@ CT=work/hackos-5-quickstart/A_MonitorBuilding/.venv/bin/ct
 
 The materialization script reads existing local monitor responses. It does not
 call models, generate evaluations, upload runs, or change source score files.
-The live `monitor:zmean3` artifact would call three component monitors per
-eligible action and was not executed during this zero-spend alignment pass.
+The live `monitor:zmean3` artifact was separately smoke-tested on one honest
+and one attack trajectory. It called three component monitors per eligible
+action, applied the frozen formula exactly, cost $0.175424, and did not upload.
+See [`live_monitor_repro_check.md`](live_monitor_repro_check.md). The official
+reported values still use the materialized frozen scores; a full live rerun
+remains human-gated.
 
 ## Test plan
 
 - [x] Unit tests cover frozen zmean3 arithmetic, score transport, and official
   metrics summaries.
+- [x] `monitor:zmean3` resolves through Control Tower and completed a bounded
+  `--no-upload` live smoke test.
 - [x] `pytest`, `ruff check .`, and `mypy .` are required before commit.
 - [x] Raw materialized trajectories and raw monitor outputs remain ignored.
-- [ ] Final live monitor run and upload remain human-gated.
+- [ ] Full live rerun and any upload remain human-gated.

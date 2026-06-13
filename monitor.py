@@ -49,8 +49,8 @@ def _control_tower_score(raw_score: float) -> float:
     return raw_score * _CT_SCALE + _CT_OFFSET
 
 
-@action_monitors.register()
-def zmean3_action_monitor(args: None = None) -> ActionMonitor:
+@action_monitors.register(name="zmean3")
+def zmean3(args: None = None) -> ActionMonitor:
     """Run the frozen orthogonal, old-action, and goal-analysis ensemble."""
     del args
     components = (
