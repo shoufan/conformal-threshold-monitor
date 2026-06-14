@@ -25,6 +25,10 @@ The matched set contains 20/49 (40.82%) main-task-succeeded attacks and 29/49 (5
 
 ## Frozen confirmatory 75
 
+All 75 attacks in this section failed the main task. The 96% result therefore
+concerns overt or main-task-failed sabotage, not stealthy dual-success
+detection.
+
 | Main-task success | n | Share | Multi | zmean3 | Both | z-only | Multi-only | Neither | Net lift | Exact McNemar p |
 | --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
 | `true` | 0 | 0.00% | 0/0 (-) | 0/0 (-) | 0 | 0 | 0 | 0 | - | - |

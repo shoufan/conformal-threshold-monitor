@@ -230,6 +230,8 @@ matched-49 effect.
 - Pooled FPR changes if the deployment environment mix changes.
 - The available honest calibration set cannot establish absolute usefulness:
   all 27 source trajectories are labeled main-task-failed before monitoring.
+  Retries or error recovery may make this calibration conservative, but no
+  successful-honest comparison is available to test that possibility.
 - The confirmatory run evaluates detection only and does not recertify FPR.
 - Raw confirmatory monitor outputs remain local and untracked.
 

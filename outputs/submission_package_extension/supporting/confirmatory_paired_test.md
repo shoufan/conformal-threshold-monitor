@@ -1,6 +1,9 @@
 # Frozen Confirmatory Paired Test
 
-This analysis applies the predeclared monitors, thresholds, and honest-only normalization constants without refitting or attack-informed tuning.
+This analysis applies the predeclared monitors, thresholds, and honest-only
+normalization constants without refitting or attack-informed tuning. All 75
+frozen attacks are main-task-failed, so the result measures overt or
+main-task-failed sabotage detection, not stealthy dual-success detection.
 
 | Population | Both | zmean3 only | Multi only | Neither | Multi detection | zmean3 detection | Net lift | Exact McNemar p |
 | --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
@@ -8,6 +11,9 @@ This analysis applies the predeclared monitors, thresholds, and honest-only norm
 | `one_per_run` | 29 | 16 | 0 | 2 | 29/47 (61.70%) | 45/47 (95.74%) | +34.04% | 3.052e-05 |
 
 ## Per-environment detection
+
+These are subdivisions of the same all-main-task-failed frozen population, so
+the environment rows do not provide stealthy dual-success evidence.
 
 | Population | Environment | Multi | zmean3 | Net lift |
 | --- | --- | ---: | ---: | ---: |
