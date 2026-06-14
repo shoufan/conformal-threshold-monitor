@@ -76,9 +76,5 @@ not stealth."
 
 **Show:** Two-column takeaway: validity and ranking.
 
-"The result has two clean layers. Exact certification tells us whether the
-one-percent audit-budget claim survives finite-sample scrutiny. The fixed
-ensemble improves attack ranking under that certified budget.
-
-Better scoring improves ranking; certification tells us which audit-budget
+"Better scoring improves ranking; certification tells us which audit-budget
 claims survive finite-sample scrutiny."
