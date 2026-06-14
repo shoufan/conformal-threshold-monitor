@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="650" viewBox="0 0 1000 650">
+<rect x="0.00" y="0.00" width="1000.00" height="650.00" fill="#ffffff"/>
+<text x="500.00" y="38.00" font-family="Arial, sans-serif" font-size="21" font-weight="700" text-anchor="middle">Pooled honest upper-tail FPR and CP bounds</text>
+<line x1="95.00" y1="90.00" x2="95.00" y2="560.00" stroke="#222222" stroke-width="1.00"/>
+<line x1="95.00" y1="560.00" x2="955.00" y2="560.00" stroke="#222222" stroke-width="1.00"/>
+<text x="500.00" y="622.00" font-family="Arial, sans-serif" font-size="15" font-weight="400" text-anchor="middle">threshold</text>
+<text x="24" y="325.00" font-family="Arial, sans-serif" font-size="15" text-anchor="middle" transform="rotate(-90 24 325.00)">rate</text>
+<line x1="95.00" y1="521.50" x2="955.00" y2="521.50" stroke="#777777" stroke-width="1.00" stroke-dasharray="6 5"/>
+<text x="950.00" y="515.50" font-family="Arial, sans-serif" font-size="12" font-weight="400" text-anchor="end">1% target</text>
+<line x1="95.00" y1="367.48" x2="955.00" y2="367.48" stroke="#777777" stroke-width="1.00" stroke-dasharray="6 5"/>
+<text x="950.00" y="361.48" font-family="Arial, sans-serif" font-size="12" font-weight="400" text-anchor="end">5% target</text>
+<polyline points="95.00,176.31 181.00,327.87 267.00,406.52 353.00,442.98 439.00,490.94 525.00,531.22 611.00,544.65 697.00,550.41 783.00,554.24 869.00,556.16 955.00,558.08" fill="none" stroke="#226f75" stroke-width="3"/>
+<polyline points="95.00,141.23 181.00,299.43 267.00,382.68 353.00,421.73 439.00,473.91 525.00,519.22 611.00,535.10 697.00,542.23 783.00,547.20 869.00,549.80 955.00,552.54" fill="none" stroke="#d0634b" stroke-width="3"/>
+<polyline points="95.00,131.32 181.00,291.38 267.00,375.92 353.00,415.69 439.00,469.06 525.00,515.78 611.00,532.35 697.00,539.86 783.00,545.14 869.00,547.93 955.00,550.91" fill="none" stroke="#6554a4" stroke-width="3"/>
+<polyline points="95.00,112.38 181.00,275.88 267.00,362.81 353.00,403.94 439.00,459.51 525.00,508.85 611.00,526.69 697.00,534.90 783.00,540.76 869.00,543.90 955.00,547.28" fill="none" stroke="#c18b22" stroke-width="3"/>
+<line x1="95.00" y1="560.00" x2="95.00" y2="566.00" stroke="#222222" stroke-width="1.00"/>
+<text x="95.00" y="584.00" font-family="Arial, sans-serif" font-size="12" font-weight="400" text-anchor="middle">2</text>
+<line x1="267.00" y1="560.00" x2="267.00" y2="566.00" stroke="#222222" stroke-width="1.00"/>
+<text x="267.00" y="584.00" font-family="Arial, sans-serif" font-size="12" font-weight="400" text-anchor="middle">3</text>
+<line x1="439.00" y1="560.00" x2="439.00" y2="566.00" stroke="#222222" stroke-width="1.00"/>
+<text x="439.00" y="584.00" font-family="Arial, sans-serif" font-size="12" font-weight="400" text-anchor="middle">4</text>
+<line x1="611.00" y1="560.00" x2="611.00" y2="566.00" stroke="#222222" stroke-width="1.00"/>
+<text x="611.00" y="584.00" font-family="Arial, sans-serif" font-size="12" font-weight="400" text-anchor="middle">5</text>
+<line x1="783.00" y1="560.00" x2="783.00" y2="566.00" stroke="#222222" stroke-width="1.00"/>
+<text x="783.00" y="584.00" font-family="Arial, sans-serif" font-size="12" font-weight="400" text-anchor="middle">6</text>
+<line x1="955.00" y1="560.00" x2="955.00" y2="566.00" stroke="#222222" stroke-width="1.00"/>
+<text x="955.00" y="584.00" font-family="Arial, sans-serif" font-size="12" font-weight="400" text-anchor="middle">7</text>
+<line x1="89.00" y1="560.00" x2="95.00" y2="560.00" stroke="#222222" stroke-width="1.00"/>
+<line x1="95.00" y1="560.00" x2="955.00" y2="560.00" stroke="#e8e8e8" stroke-width="1.00"/>
+<text x="85.00" y="564.00" font-family="Arial, sans-serif" font-size="12" font-weight="400" text-anchor="end">0.0%</text>
+<line x1="89.00" y1="466.00" x2="95.00" y2="466.00" stroke="#222222" stroke-width="1.00"/>
+<line x1="95.00" y1="466.00" x2="955.00" y2="466.00" stroke="#e8e8e8" stroke-width="1.00"/>
+<text x="85.00" y="470.00" font-family="Arial, sans-serif" font-size="12" font-weight="400" text-anchor="end">2.4%</text>
+<line x1="89.00" y1="372.00" x2="95.00" y2="372.00" stroke="#222222" stroke-width="1.00"/>
+<line x1="95.00" y1="372.00" x2="955.00" y2="372.00" stroke="#e8e8e8" stroke-width="1.00"/>
+<text x="85.00" y="376.00" font-family="Arial, sans-serif" font-size="12" font-weight="400" text-anchor="end">4.9%</text>
+<line x1="89.00" y1="278.00" x2="95.00" y2="278.00" stroke="#222222" stroke-width="1.00"/>
+<line x1="95.00" y1="278.00" x2="955.00" y2="278.00" stroke="#e8e8e8" stroke-width="1.00"/>
+<text x="85.00" y="282.00" font-family="Arial, sans-serif" font-size="12" font-weight="400" text-anchor="end">7.3%</text>
+<line x1="89.00" y1="184.00" x2="95.00" y2="184.00" stroke="#222222" stroke-width="1.00"/>
+<line x1="95.00" y1="184.00" x2="955.00" y2="184.00" stroke="#e8e8e8" stroke-width="1.00"/>
+<text x="85.00" y="188.00" font-family="Arial, sans-serif" font-size="12" font-weight="400" text-anchor="end">9.8%</text>
+<line x1="89.00" y1="90.00" x2="95.00" y2="90.00" stroke="#222222" stroke-width="1.00"/>
+<line x1="95.00" y1="90.00" x2="955.00" y2="90.00" stroke="#e8e8e8" stroke-width="1.00"/>
+<text x="85.00" y="94.00" font-family="Arial, sans-serif" font-size="12" font-weight="400" text-anchor="end">12.2%</text>
+<line x1="110.00" y1="108.00" x2="138.00" y2="108.00" stroke="#226f75" stroke-width="3.00"/>
+<text x="146.00" y="112.00" font-family="Arial, sans-serif" font-size="13" font-weight="400" text-anchor="start">Observed FPR</text>
+<line x1="110.00" y1="131.00" x2="138.00" y2="131.00" stroke="#d0634b" stroke-width="3.00"/>
+<text x="146.00" y="135.00" font-family="Arial, sans-serif" font-size="13" font-weight="400" text-anchor="start">CP upper, delta=10%</text>
+<line x1="110.00" y1="154.00" x2="138.00" y2="154.00" stroke="#6554a4" stroke-width="3.00"/>
+<text x="146.00" y="158.00" font-family="Arial, sans-serif" font-size="13" font-weight="400" text-anchor="start">CP upper, delta=5%</text>
+<line x1="110.00" y1="177.00" x2="138.00" y2="177.00" stroke="#c18b22" stroke-width="3.00"/>
+<text x="146.00" y="181.00" font-family="Arial, sans-serif" font-size="13" font-weight="400" text-anchor="start">CP upper, delta=1%</text>
+</svg>

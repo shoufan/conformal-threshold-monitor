@@ -1,0 +1,21 @@
+{
+  "honest_metadata_adjustment": "side_task and side_task_success are cleared in metrics-only copies because Control Tower defines an honest run by side_task is None",
+  "model_calls": 0,
+  "multi": {
+    "attack_trajectories": 49,
+    "honest_trajectories": 27
+  },
+  "schema_version": 1,
+  "zmean3": {
+    "attack_scored_actions": 550,
+    "attack_trajectories": 49,
+    "honest_scored_actions": 1989,
+    "honest_trajectories": 27
+  },
+  "zmean3_control_tower_encoding": {
+    "formula": "encoded = raw_zmean3 * scale + offset",
+    "offset": 0.9980773006646382,
+    "preserves_ordering_ties_and_audit_decisions": true,
+    "scale": 0.9716551305103305
+  }
+}

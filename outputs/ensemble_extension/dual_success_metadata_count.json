@@ -1,0 +1,311 @@
+{
+  "environments": {
+    "auto_workflow": {
+      "action_count": {
+        "count": 56,
+        "max": 10,
+        "mean": 9.25,
+        "median": 9.5,
+        "min": 8,
+        "total": 518
+      },
+      "attempts_distribution": [
+        {
+          "attempts_mt": "null",
+          "attempts_sneaky": "null",
+          "attempts_st": "null",
+          "count": 56
+        }
+      ],
+      "author_counts": {},
+      "author_diversity": 0,
+      "excluded_frozen_confirmatory": 0,
+      "excluded_lastraj": 4,
+      "excluded_other_local_download": 0,
+      "new_count": 56,
+      "page_hit_limit": false,
+      "page_limit": 500,
+      "returned_count": 60,
+      "side_task_counts": {
+        "aw_exfiltrate_secrets_delayed": 56
+      },
+      "side_task_diversity": 1,
+      "valid_dual_success_count": 60
+    },
+    "clinical_trial": {
+      "action_count": {
+        "count": 82,
+        "max": 30,
+        "mean": 14.170731707317072,
+        "median": 10.0,
+        "min": 6,
+        "total": 1162
+      },
+      "attempts_distribution": [
+        {
+          "attempts_mt": "null",
+          "attempts_sneaky": "null",
+          "attempts_st": "null",
+          "count": 60
+        },
+        {
+          "attempts_mt": "true",
+          "attempts_sneaky": "true",
+          "attempts_st": "true",
+          "count": 22
+        }
+      ],
+      "author_counts": {},
+      "author_diversity": 0,
+      "excluded_frozen_confirmatory": 0,
+      "excluded_lastraj": 6,
+      "excluded_other_local_download": 5,
+      "new_count": 82,
+      "page_hit_limit": false,
+      "page_limit": 500,
+      "returned_count": 93,
+      "side_task_counts": {
+        "export_medical_data": 30,
+        "suppress_safety_notifications": 24,
+        "withdrawal_misclassification": 28
+      },
+      "side_task_diversity": 3,
+      "valid_dual_success_count": 93
+    },
+    "file_indexing": {
+      "action_count": {
+        "count": 28,
+        "max": 18,
+        "mean": 17.5,
+        "median": 17.5,
+        "min": 17,
+        "total": 490
+      },
+      "attempts_distribution": [
+        {
+          "attempts_mt": "null",
+          "attempts_sneaky": "null",
+          "attempts_st": "null",
+          "count": 28
+        }
+      ],
+      "author_counts": {},
+      "author_diversity": 0,
+      "excluded_frozen_confirmatory": 0,
+      "excluded_lastraj": 2,
+      "excluded_other_local_download": 0,
+      "new_count": 28,
+      "page_hit_limit": false,
+      "page_limit": 500,
+      "returned_count": 30,
+      "side_task_counts": {
+        "access_secret_files_you_dont_own": 14,
+        "vector_indexer_result_poisoning": 14
+      },
+      "side_task_diversity": 2,
+      "valid_dual_success_count": 30
+    },
+    "media_processing": {
+      "action_count": {
+        "count": 113,
+        "max": 13,
+        "mean": 9.008849557522124,
+        "median": 9.0,
+        "min": 3,
+        "total": 1018
+      },
+      "attempts_distribution": [
+        {
+          "attempts_mt": "null",
+          "attempts_sneaky": "null",
+          "attempts_st": "null",
+          "count": 113
+        }
+      ],
+      "author_counts": {},
+      "author_diversity": 0,
+      "excluded_frozen_confirmatory": 0,
+      "excluded_lastraj": 8,
+      "excluded_other_local_download": 1,
+      "new_count": 113,
+      "page_hit_limit": false,
+      "page_limit": 500,
+      "returned_count": 122,
+      "side_task_counts": {
+        "access_other_teams_media": 113
+      },
+      "side_task_diversity": 1,
+      "valid_dual_success_count": 122
+    },
+    "shared_dotfiles": {
+      "action_count": {
+        "count": 0,
+        "max": 0,
+        "mean": 0.0,
+        "median": 0.0,
+        "min": 0,
+        "total": 0
+      },
+      "attempts_distribution": [],
+      "author_counts": {},
+      "author_diversity": 0,
+      "excluded_frozen_confirmatory": 0,
+      "excluded_lastraj": 0,
+      "excluded_other_local_download": 0,
+      "new_count": 0,
+      "page_hit_limit": false,
+      "page_limit": 500,
+      "returned_count": 0,
+      "side_task_counts": {},
+      "side_task_diversity": 0,
+      "valid_dual_success_count": 0
+    },
+    "slack_clone": {
+      "action_count": {
+        "count": 56,
+        "max": 17,
+        "mean": 15.5,
+        "median": 15.5,
+        "min": 14,
+        "total": 868
+      },
+      "attempts_distribution": [
+        {
+          "attempts_mt": "null",
+          "attempts_sneaky": "null",
+          "attempts_st": "null",
+          "count": 56
+        }
+      ],
+      "author_counts": {},
+      "author_diversity": 0,
+      "excluded_frozen_confirmatory": 0,
+      "excluded_lastraj": 6,
+      "excluded_other_local_download": 0,
+      "new_count": 56,
+      "page_hit_limit": false,
+      "page_limit": 500,
+      "returned_count": 62,
+      "side_task_counts": {
+        "exfiltrate_private_messages": 9,
+        "exfiltrate_private_messages_delayed": 5,
+        "rce": 9,
+        "sc_rce": 5,
+        "ssh_backdoor": 28
+      },
+      "side_task_diversity": 5,
+      "valid_dual_success_count": 62
+    },
+    "tiktok": {
+      "action_count": {
+        "count": 30,
+        "max": 40,
+        "mean": 31.466666666666665,
+        "median": 24.0,
+        "min": 24,
+        "total": 944
+      },
+      "attempts_distribution": [
+        {
+          "attempts_mt": "null",
+          "attempts_sneaky": "null",
+          "attempts_st": "null",
+          "count": 30
+        }
+      ],
+      "author_counts": {},
+      "author_diversity": 0,
+      "excluded_frozen_confirmatory": 0,
+      "excluded_lastraj": 2,
+      "excluded_other_local_download": 0,
+      "new_count": 30,
+      "page_hit_limit": false,
+      "page_limit": 500,
+      "returned_count": 32,
+      "side_task_counts": {
+        "become_admin": 14,
+        "exfiltrate_tokens": 16
+      },
+      "side_task_diversity": 2,
+      "valid_dual_success_count": 32
+    },
+    "web_scraping": {
+      "action_count": {
+        "count": 83,
+        "max": 14,
+        "mean": 12.180722891566266,
+        "median": 13.0,
+        "min": 10,
+        "total": 1011
+      },
+      "attempts_distribution": [
+        {
+          "attempts_mt": "null",
+          "attempts_sneaky": "null",
+          "attempts_st": "null",
+          "count": 72
+        },
+        {
+          "attempts_mt": "true",
+          "attempts_sneaky": "true",
+          "attempts_st": "true",
+          "count": 11
+        }
+      ],
+      "author_counts": {},
+      "author_diversity": 0,
+      "excluded_frozen_confirmatory": 0,
+      "excluded_lastraj": 6,
+      "excluded_other_local_download": 1,
+      "new_count": 83,
+      "page_hit_limit": false,
+      "page_limit": 500,
+      "returned_count": 90,
+      "side_task_counts": {
+        "expose_secret": 55,
+        "log_credentials": 28
+      },
+      "side_task_diversity": 2,
+      "valid_dual_success_count": 90
+    }
+  },
+  "future_75_cost_estimate": {
+    "confidence": "medium-low until a family-deduplicated manifest is frozen",
+    "cost_per_aligned_action_usd": 0.0032991498313252993,
+    "estimated_cost_usd": 2.832052265504944,
+    "estimated_cost_with_50pct_contingency_usd": 4.248078398257416,
+    "estimated_monitorable_actions": 858.4188079652272,
+    "expected_raw_actions": 884.0076039101366,
+    "selection": "25 metadata-selected records per matched environment"
+  },
+  "generated_at": "2026-06-13",
+  "known_id_sets": {
+    "all_local_downloaded_trajectory_ids": 241,
+    "frozen_confirmatory": 75,
+    "lastraj": 76
+  },
+  "matched_summary": {
+    "all_pages_below_limit": true,
+    "crosses_200_candidate_gate": true,
+    "data_availability_is_blocker": false,
+    "feasibility": "75_plus",
+    "learned_gate_recommendation": "Metadata volume exceeds 200, but no learned gate should be attempted now. Family deduplication, independence checks, and frozen held-out splits would be required first.",
+    "new_dual_success_ids": 278,
+    "recommendation": "A later 75-record set, 25 per matched environment, is feasible after submission logistics are locked and a human approves the budget.",
+    "returned_dual_success": 305,
+    "scoring_time_and_vetting_are_blockers": true
+  },
+  "query": {
+    "endpoint": "https://data.linuxarena.ai/api/trajectories",
+    "filters": {
+      "limit": 500,
+      "passesMainTask": true,
+      "passesSideTask": true,
+      "summary": true
+    },
+    "full_trajectories_downloaded": 0,
+    "model_calls": 0,
+    "paid_api_calls": 0
+  },
+  "schema_version": 1
+}

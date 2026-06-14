@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="650" viewBox="0 0 1000 650">
+<rect x="0.00" y="0.00" width="1000.00" height="650.00" fill="#ffffff"/>
+<text x="500.00" y="38.00" font-family="Arial, sans-serif" font-size="21" font-weight="700" text-anchor="middle">mean3: successful attack detection</text>
+<line x1="95.00" y1="90.00" x2="95.00" y2="560.00" stroke="#222222" stroke-width="1.00"/>
+<line x1="95.00" y1="560.00" x2="955.00" y2="560.00" stroke="#222222" stroke-width="1.00"/>
+<text x="500.00" y="622.00" font-family="Arial, sans-serif" font-size="15" font-weight="400" text-anchor="middle">threshold</text>
+<text x="24" y="325.00" font-family="Arial, sans-serif" font-size="15" text-anchor="middle" transform="rotate(-90 24 325.00)">detection rate</text>
+<polyline points="95.00,90.00 145.59,90.00 196.18,90.00 246.76,128.37 297.35,137.96 347.94,137.96 398.53,137.96 449.12,157.14 499.71,205.10 550.29,214.69 600.88,243.47 651.47,310.61 752.65,387.35 853.82,425.71 904.41,444.90 955.00,492.86" fill="none" stroke="#226f75" stroke-width="3"/>
+<line x1="110.00" y1="174.00" x2="138.00" y2="174.00" stroke="#226f75" stroke-width="3.00"/>
+<text x="146.00" y="178.00" font-family="Arial, sans-serif" font-size="12" font-weight="400" text-anchor="start">Matched 49</text>
+<polyline points="95.00,90.00 145.59,90.00 196.18,90.00 246.76,114.74 297.35,120.92 347.94,133.29 398.53,158.03 449.12,176.58 499.71,213.68 550.29,244.61 600.88,263.16 651.47,318.82 752.65,393.03 853.82,442.50 904.41,454.87 955.00,485.79" fill="none" stroke="#d0634b" stroke-width="3"/>
+<line x1="110.00" y1="152.00" x2="138.00" y2="152.00" stroke="#d0634b" stroke-width="3.00"/>
+<text x="146.00" y="156.00" font-family="Arial, sans-serif" font-size="12" font-weight="400" text-anchor="start">All 76 (descriptive)</text>
+<text x="95.00" y="584.00" font-family="Arial, sans-serif" font-size="11" font-weight="400" text-anchor="middle">0.333</text>
+<text x="267.00" y="584.00" font-family="Arial, sans-serif" font-size="11" font-weight="400" text-anchor="middle">1.47</text>
+<text x="439.00" y="584.00" font-family="Arial, sans-serif" font-size="11" font-weight="400" text-anchor="middle">2.6</text>
+<text x="611.00" y="584.00" font-family="Arial, sans-serif" font-size="11" font-weight="400" text-anchor="middle">3.73</text>
+<text x="783.00" y="584.00" font-family="Arial, sans-serif" font-size="11" font-weight="400" text-anchor="middle">4.87</text>
+<text x="955.00" y="584.00" font-family="Arial, sans-serif" font-size="11" font-weight="400" text-anchor="middle">6</text>
+<line x1="95.00" y1="560.00" x2="955.00" y2="560.00" stroke="#e8e8e8" stroke-width="1.00"/>
+<text x="86.00" y="564.00" font-family="Arial, sans-serif" font-size="11" font-weight="400" text-anchor="end">0.00%</text>
+<line x1="95.00" y1="466.00" x2="955.00" y2="466.00" stroke="#e8e8e8" stroke-width="1.00"/>
+<text x="86.00" y="470.00" font-family="Arial, sans-serif" font-size="11" font-weight="400" text-anchor="end">20.00%</text>
+<line x1="95.00" y1="372.00" x2="955.00" y2="372.00" stroke="#e8e8e8" stroke-width="1.00"/>
+<text x="86.00" y="376.00" font-family="Arial, sans-serif" font-size="11" font-weight="400" text-anchor="end">40.00%</text>
+<line x1="95.00" y1="278.00" x2="955.00" y2="278.00" stroke="#e8e8e8" stroke-width="1.00"/>
+<text x="86.00" y="282.00" font-family="Arial, sans-serif" font-size="11" font-weight="400" text-anchor="end">60.00%</text>
+<line x1="95.00" y1="184.00" x2="955.00" y2="184.00" stroke="#e8e8e8" stroke-width="1.00"/>
+<text x="86.00" y="188.00" font-family="Arial, sans-serif" font-size="11" font-weight="400" text-anchor="end">80.00%</text>
+<line x1="95.00" y1="90.00" x2="955.00" y2="90.00" stroke="#e8e8e8" stroke-width="1.00"/>
+<text x="86.00" y="94.00" font-family="Arial, sans-serif" font-size="11" font-weight="400" text-anchor="end">100.00%</text>
+</svg>

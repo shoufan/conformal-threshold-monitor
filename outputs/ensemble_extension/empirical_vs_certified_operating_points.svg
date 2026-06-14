@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="650" viewBox="0 0 1000 650">
+<rect x="0.00" y="0.00" width="1000.00" height="650.00" fill="#ffffff"/>
+<text x="500.00" y="38.00" font-family="Arial, sans-serif" font-size="21" font-weight="700" text-anchor="middle">Empirical and certified 1% operating points (delta=.10)</text>
+<line x1="95.00" y1="90.00" x2="95.00" y2="560.00" stroke="#222222" stroke-width="1.00"/>
+<line x1="95.00" y1="560.00" x2="955.00" y2="560.00" stroke="#222222" stroke-width="1.00"/>
+<text x="500.00" y="622.00" font-family="Arial, sans-serif" font-size="15" font-weight="400" text-anchor="middle">observed honest FPR</text>
+<text x="24" y="325.00" font-family="Arial, sans-serif" font-size="15" text-anchor="middle" transform="rotate(-90 24 325.00)">matched-49 detection</text>
+<circle cx="635.47" cy="301.02" r="6" fill="#226f75"/>
+<text x="643.47" y="293.02" font-family="Arial, sans-serif" font-size="11" font-weight="400" text-anchor="start">multi_baseline e</text>
+<rect x="377.25" y="352.57" width="12.00" height="12.00" fill="#226f75"/>
+<text x="391.25" y="350.57" font-family="Arial, sans-serif" font-size="11" font-weight="400" text-anchor="start">multi_baseline c</text>
+<circle cx="779.60" cy="243.47" r="6" fill="#d0634b"/>
+<text x="787.60" y="235.47" font-family="Arial, sans-serif" font-size="11" font-weight="400" text-anchor="start">mean3 e</text>
+<rect x="557.41" y="304.61" width="12.00" height="12.00" fill="#d0634b"/>
+<text x="571.41" y="302.61" font-family="Arial, sans-serif" font-size="11" font-weight="400" text-anchor="start">mean3 c</text>
+<circle cx="563.41" cy="416.12" r="6" fill="#6554a4"/>
+<text x="571.41" y="408.12" font-family="Arial, sans-serif" font-size="11" font-weight="400" text-anchor="start">max3 e</text>
+<rect x="557.41" y="410.12" width="12.00" height="12.00" fill="#6554a4"/>
+<text x="571.41" y="408.12" font-family="Arial, sans-serif" font-size="11" font-weight="400" text-anchor="start">max3 c</text>
+<circle cx="779.60" cy="243.47" r="6" fill="#c18b22"/>
+<text x="787.60" y="235.47" font-family="Arial, sans-serif" font-size="11" font-weight="400" text-anchor="start">zmean3 e</text>
+<rect x="557.41" y="275.84" width="12.00" height="12.00" fill="#c18b22"/>
+<text x="571.41" y="273.84" font-family="Arial, sans-serif" font-size="11" font-weight="400" text-anchor="start">zmean3 c</text>
+<line x1="811.67" y1="90.00" x2="811.67" y2="560.00" stroke="#666666" stroke-width="1.00" stroke-dasharray="6 5"/>
+<line x1="95.00" y1="560.00" x2="955.00" y2="560.00" stroke="#e8e8e8" stroke-width="1.00"/>
+<text x="86.00" y="564.00" font-family="Arial, sans-serif" font-size="11" font-weight="400" text-anchor="end">0.00%</text>
+<line x1="95.00" y1="466.00" x2="955.00" y2="466.00" stroke="#e8e8e8" stroke-width="1.00"/>
+<text x="86.00" y="470.00" font-family="Arial, sans-serif" font-size="11" font-weight="400" text-anchor="end">20.00%</text>
+<line x1="95.00" y1="372.00" x2="955.00" y2="372.00" stroke="#e8e8e8" stroke-width="1.00"/>
+<text x="86.00" y="376.00" font-family="Arial, sans-serif" font-size="11" font-weight="400" text-anchor="end">40.00%</text>
+<line x1="95.00" y1="278.00" x2="955.00" y2="278.00" stroke="#e8e8e8" stroke-width="1.00"/>
+<text x="86.00" y="282.00" font-family="Arial, sans-serif" font-size="11" font-weight="400" text-anchor="end">60.00%</text>
+<line x1="95.00" y1="184.00" x2="955.00" y2="184.00" stroke="#e8e8e8" stroke-width="1.00"/>
+<text x="86.00" y="188.00" font-family="Arial, sans-serif" font-size="11" font-weight="400" text-anchor="end">80.00%</text>
+<line x1="95.00" y1="90.00" x2="955.00" y2="90.00" stroke="#e8e8e8" stroke-width="1.00"/>
+<text x="86.00" y="94.00" font-family="Arial, sans-serif" font-size="11" font-weight="400" text-anchor="end">100.00%</text>
+<text x="95.00" y="584.00" font-family="Arial, sans-serif" font-size="11" font-weight="400" text-anchor="middle">0.00%</text>
+<text x="267.00" y="584.00" font-family="Arial, sans-serif" font-size="11" font-weight="400" text-anchor="middle">0.24%</text>
+<text x="439.00" y="584.00" font-family="Arial, sans-serif" font-size="11" font-weight="400" text-anchor="middle">0.48%</text>
+<text x="611.00" y="584.00" font-family="Arial, sans-serif" font-size="11" font-weight="400" text-anchor="middle">0.72%</text>
+<text x="783.00" y="584.00" font-family="Arial, sans-serif" font-size="11" font-weight="400" text-anchor="middle">0.96%</text>
+<text x="955.00" y="584.00" font-family="Arial, sans-serif" font-size="11" font-weight="400" text-anchor="middle">1.20%</text>
+</svg>

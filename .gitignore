@@ -22,3 +22,6 @@ outputs/multi_scored_crossenv/
 outputs/monitor_smoke/
 outputs/monitor_comparison/
 outputs/pilot_scored/
+outputs/official_metrics/multi_baseline/matched_inputs/
+outputs/official_metrics/zmean3_materialized_inputs/
+outputs/official_metrics/*/safety_curves.png
