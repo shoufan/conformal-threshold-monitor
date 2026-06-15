@@ -20,6 +20,11 @@ same frozen formula materialized from saved component scores. A bounded live
 smoke test verified that the registered artifact runs through Control Tower
 and applies the formula exactly.
 
+Live `monitor:zmean3` emits a fixed affine 0–10 encoding of raw zmean3 scores.
+The certified raw threshold 2.636 corresponds to approximately 3.56 in the
+encoded Control Tower score space; the analysis utilities decode this
+automatically.
+
 ## Main deliverables
 
 - [Two-page report](outputs/submission_package_extension/final_report/two_page_report.md)

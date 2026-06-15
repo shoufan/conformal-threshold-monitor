@@ -40,6 +40,11 @@ The empirical threshold observes less than 1% FPR but cannot certify that
 claim. Certification validates the operating point; it does not improve
 ranking.
 
+Live `monitor:zmean3` emits a fixed affine 0–10 encoding of raw zmean3 scores.
+The certified raw threshold 2.636 corresponds to approximately 3.56 in the
+encoded Control Tower score space; the analysis utilities decode this
+automatically.
+
 ### Fixed ensemble on the matched 49
 
 | Monitor | Caught | Detection | Paired-only catches |
