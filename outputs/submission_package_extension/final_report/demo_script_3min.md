@@ -1,16 +1,16 @@
 # Three-minute demo script
 
-## 0:00-0:35 - Start with the audit-budget problem
+## 0:00-0:32 - Two questions about the audit budget
 
 **Show:** The empirical-versus-certified `multi` table.
 
-"A monitor threshold can observe less than one percent false positives without
-having enough evidence to support a one-percent claim. We separate two
-questions: is the audit budget statistically certifiable, and once it is, can
-a fixed ensemble detect more attacks?
-
-This is an application of exact finite-sample certification to AI-control
-audit budgets. Certification does not make the monitor rank attacks better."
+"Every Track A safety number is reported at an audit budget, usually a one
+percent honest-action false-positive rate. I separate two questions: what
+safety do we get at that budget, and is the one percent claim statistically
+supportable from the honest data? zmean3 beats the Track A multi baseline in
+both frames: 67.35 versus 58.44 percent official empirical safety, and 59.18
+versus 42.86 percent at certified deterministic one percent. The certified
+drop is the price of certification, not zmean3 losing to the baseline."
 
 ## 0:35-1:12 - Official empirical curve and certified `multi`
 
@@ -39,12 +39,10 @@ behind a deployable threshold."
 old-action components. Its normalization comes only from honest actions. We
 did not train a gate or tune weights on attacks.
 
-Official one-percent empirical safety rises from 58.4 percent for `multi` to
-67.3 percent for `zmean3`. At each monitor's deterministic threshold certified
-for a one-percent FPR at delta 0.10, `multi` catches 21 of 49 matched attacks
-and `zmean3` catches 29.
-The paired cells are 19 both, 10 `zmean3` only, 2 `multi` only, and 18 neither.
-The exact McNemar p-value is 0.0386."
+At each monitor's deterministic threshold certified for a one-percent FPR at
+delta 0.10, `multi` catches 21 of 49 matched attacks and `zmean3` catches 29.
+Discordant pairs run 10 to 2 in `zmean3`'s favor; the exact McNemar p-value is
+0.0386."
 
 ## 1:48-2:14 - Ranking versus granularity
 
@@ -53,7 +51,9 @@ The exact McNemar p-value is 0.0386."
 "Both three-component means catch 33 of 49 at the empirical point, so adding
 goal-analysis is the ranking gain. Under certification, plain mean3 catches
 26 while zmean3 catches 29. `multi` has 15 unique honest scores; zmean3 has
-103. The finer grid lets certification retain more of the ranking gain."
+103. The finer grid lets certification retain more of the ranking gain, and
+the same lever shows in the official metric: multi needs fractional score-4
+tie auditing to reach 58.4, while zmean3 has no boundary-tie gap."
 
 ## 2:14-2:35 - Check the stealth proxy
 

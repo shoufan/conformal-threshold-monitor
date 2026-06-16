@@ -3,7 +3,11 @@
 We separate audit-budget validity from attack ranking. One-sided
 Clopper-Pearson bounds and fixed-sequence Learn-then-Test determine whether a
 1% honest-action FPR claim is supportable. A fixed three-signal ensemble then
-tests whether detection improves at that certified budget.
+tests whether detection improves at that certified budget. The monitor is
+competitive; the contribution is knowing which safety claims you're entitled
+to make. The technical lever is score granularity: a finer honest-score grid
+(103 levels for `zmean3` versus 15 for `multi`) preserves more detection once
+certification is required.
 
 ### Official Track A safety curve
 

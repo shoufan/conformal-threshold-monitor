@@ -1,12 +1,26 @@
 # Certified audit-budget validity for action monitors
 
-This Track A submission compares the baseline `multi` action monitor with a
-fixed three-signal ensemble, `zmean3`. At the official empirical 1% audit
-budget, safety is 58.44% for `multi` and 67.35% for `zmean3`. At deterministic
-operating points certified for a 1% honest-action false-positive rate,
-safety is 42.86% and 59.18%, respectively. `zmean3` improves attack ranking;
-Clopper-Pearson and fixed-sequence Learn-then-Test check whether the claimed
-audit budget is statistically supportable.
+When is a 1% audit budget actually 1%? We show that a sub-1% empirical FPR
+does not automatically certify a 1% claim at the honest-sample sizes used
+here, and that score granularity controls how much safety survives once
+certification is required. `zmean3` is also a competitive monitor: it beats
+Track A `multi` at the official empirical point, 67.35% vs 58.44%, and at the
+certified deterministic point, 59.18% vs 42.86%.
+
+Concretely, on this project's 2,007 honest actions across three matched
+environments, threshold 4.5 observes a 0.75% FPR but its 90% Clopper-Pearson
+upper bound is 1.06%, so the 1% claim is not certified. Certifying a 1% FPR
+with zero tail flags needs roughly 230, 299, and 459 honest actions at
+`delta = 0.10, 0.05, 0.01`. `zmean3` exposes 103 distinct honest score levels
+versus `multi`'s 15, and the finer grid preserves more detection under
+certification. These findings are demonstrated on this project's calibration
+data plus the general minimum-n bound: numbers from a handful of runs are
+unlikely to clear the certification floor, which is a field-wide finite-sample
+property this testbed makes visible — not a claim that any specific reported
+number is wrong.
+
+**The monitor is competitive; the contribution is knowing which safety claims
+you're entitled to make.**
 
 ## Submitted monitor
 
