@@ -109,7 +109,6 @@ human-gated.
 
 See the
 [two-page submission report](two_page_report.md),
-[full report](certified_audit_budget_report.md),
-[demo script](demo_script_3min.md), and
+[full report](certified_audit_budget_report.md), and
 [machine-readable tables](key_tables.json). The detailed interpretation audit
 is in `outputs/official_metrics/official_metrics_audit.md`.

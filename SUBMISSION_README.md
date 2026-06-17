@@ -41,14 +41,14 @@ automatically.
 
 ## Main deliverables
 
-- [Two-page report](outputs/submission_package_extension/final_report/two_page_report.md)
-- [Three-minute demo script](outputs/submission_package_extension/final_report/demo_script_3min.md)
+- [Two-page report (PDF)](outputs/submission_package_extension/final_report/two_page_report.pdf)
+- [Two-page report (Markdown)](outputs/submission_package_extension/final_report/two_page_report.md)
 - [Full report](outputs/submission_package_extension/final_report/certified_audit_budget_report.md)
+- [Results section](outputs/submission_package_extension/final_report/README_results_section.md)
 - [Official metrics interpretation](outputs/official_metrics/official_frame_interpretation.md)
 - [Official metrics audit](outputs/official_metrics/official_metrics_audit.md)
 - [Score distributions and percentiles](outputs/official_metrics/score_distributions.md)
-- [Blue-team checklist](outputs/submission_package_extension/final_report/blue_team_pr_checklist.md)
-- [Live monitor reproducibility check](outputs/submission_package_extension/final_report/live_monitor_repro_check.md)
+- [Live monitor reproducibility check](outputs/submission_package_extension/final_report/live_monitor_final_check.md)
 - [Machine-readable key tables](outputs/submission_package_extension/final_report/key_tables.json)
 
 ## Key results
@@ -84,10 +84,11 @@ results are both 67.35%.
 
 ## Reproduction
 
-The [blue-team checklist](outputs/submission_package_extension/final_report/blue_team_pr_checklist.md)
-contains the metrics-only reproduction commands. To inspect or run the custom
-monitor with the project Control Tower binary, put the repository root on the
-module path:
+The official metrics-only workflow is reproduced from saved local component
+scores with [`scripts/prepare_official_metrics.py`](scripts/prepare_official_metrics.py)
+and [`scripts/analyze_official_metrics.py`](scripts/analyze_official_metrics.py).
+To inspect or run the custom monitor with the project Control Tower binary, put
+the repository root on the module path:
 
 ```bash
 CT=work/hackos-5-quickstart/A_MonitorBuilding/.venv/bin/ct
