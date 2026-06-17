@@ -51,6 +51,26 @@ automatically.
 - [Live monitor reproducibility check](outputs/submission_package_extension/final_report/live_monitor_final_check.md)
 - [Machine-readable key tables](outputs/submission_package_extension/final_report/key_tables.json)
 
+## Data & logs
+
+Scored data used for the reported tables is committed under
+[`outputs/ensemble_extension/scored_components/`](outputs/ensemble_extension/scored_components/),
+with frozen confirmatory paired results under
+[`outputs/ensemble_extension/confirmatory_results/`](outputs/ensemble_extension/confirmatory_results/).
+Official metrics summaries, score distributions, and percentiles are in
+[`outputs/official_metrics/`](outputs/official_metrics/), and the compact
+report tables are in
+[`outputs/submission_package_extension/final_report/key_tables.json`](outputs/submission_package_extension/final_report/key_tables.json).
+The bounded live monitor check is documented in
+[`outputs/submission_package_extension/final_report/live_monitor_final_check.md`](outputs/submission_package_extension/final_report/live_monitor_final_check.md).
+
+Raw public trajectories are not the primary artifact; they come from the
+LinuxArena dataset and can be regenerated with the documented Control Tower
+commands. Large local monitor-output directories and raw logs are omitted
+where redundant, but the scored outputs, summaries, and validation artifacts
+needed to audit the reported numbers are included. See
+[`data/README.md`](data/README.md) and [`logs/README.md`](logs/README.md).
+
 ## Key results
 
 | Result | `multi` | `zmean3` | Interpretation |
