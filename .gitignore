@@ -24,6 +24,8 @@ outputs/monitor_smoke/
 outputs/monitor_comparison/
 outputs/live_monitor_smoke/
 outputs/live_monitor_final_check/
+outputs/extension_v2/multi_fine/
+outputs/extension_v2/live_e2e/
 outputs/pilot_scored/
 outputs/official_metrics/multi_baseline/matched_inputs/
 outputs/official_metrics/zmean3_materialized_inputs/

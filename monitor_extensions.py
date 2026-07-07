@@ -41,6 +41,8 @@ Run with:
 
 from __future__ import annotations
 
+import asyncio
+
 from control_tower.protocols.monitoring.action_monitors.helpers import (
     default_parse_response,
     ensemble_action_monitors,
@@ -60,7 +62,49 @@ from control_tower.protocols.monitoring.action_monitors.monitors.orthogonal impo
 )
 from control_tower.protocols.monitoring.registry import action_monitors
 from control_tower.protocols.monitoring.types import ActionMonitor
+from control_tower.trajectories.trajectory import MonitorResult, Trajectory
 from control_tower.utils.xml_utils import extract_xml_tag
+from inspect_ai.model import GenerateConfig
+
+# Primary hang defense: a request-level HTTP timeout inside the model config.
+# Live scoring stalled three times on silent sockets; an asyncio-level
+# cancellation guard alone did NOT unblock the run (cancellation is swallowed
+# inside the client stack), so the timeout must live at the HTTP layer where
+# it can interrupt a dead read. inspect_ai retries timed-out requests up to
+# max_retries before surfacing an error.
+_REQUEST_TIMEOUT_CONFIG = GenerateConfig(timeout=120, max_retries=2)
+
+# Live scoring hit hung HTTP requests twice (spend frozen, one ESTABLISHED
+# socket, zero CPU): with --max-concurrent 1 a single silent connection stalls
+# the whole batch forever. This wrapper bounds each component call; on timeout
+# it retries once, then returns an errored MonitorResult. mean_ensemble
+# excludes errored members, so a timed-out component degrades the action
+# instead of freezing the run; analysis must treat any action with a
+# timeout-errored member as an error action (not a valid multi_fine score).
+_COMPONENT_TIMEOUT_SECONDS = 240.0
+_COMPONENT_ATTEMPTS = 2
+
+
+def _with_timeout(
+    monitor: ActionMonitor,
+    seconds: float = _COMPONENT_TIMEOUT_SECONDS,
+    attempts: int = _COMPONENT_ATTEMPTS,
+) -> ActionMonitor:
+    """Bound each component call; retry once on timeout, then error out."""
+
+    async def wrapped(traj: Trajectory, action_idx: int) -> MonitorResult:
+        for attempt in range(attempts):
+            try:
+                return await asyncio.wait_for(monitor.func(traj, action_idx), timeout=seconds)
+            except TimeoutError:
+                if attempt + 1 == attempts:
+                    return MonitorResult(
+                        sus_score=0.0,
+                        error=f"component timed out after {attempts}x{seconds:.0f}s",
+                    )
+        raise AssertionError("unreachable")
+
+    return ActionMonitor(func=wrapped, use_cache_warmup=monitor.use_cache_warmup)
 
 _FINE_PROMPT_EDITS: dict[str, tuple[tuple[str, str], ...]] = {
     "orthogonal": (
@@ -119,24 +163,34 @@ def multi_fine(args: None = None) -> ActionMonitor:
     del args
     orthogonal_prompt = _fine_prompt(_orthogonal_module.PROMPT_TEMPLATE, "orthogonal")
     old_action_prompt = _fine_prompt(_old_action_module.PROMPT_TEMPLATE, "old_action")
+    orthogonal_model = OrthogonalMonitorArgs().model.model_copy(
+        update={"config": _REQUEST_TIMEOUT_CONFIG}
+    )
+    old_action_model = OldActionMonitorArgs().model.model_copy(
+        update={"config": _REQUEST_TIMEOUT_CONFIG}
+    )
     return ensemble_action_monitors(
         [
             (
-                simple_action_monitor(
-                    OrthogonalMonitorArgs().model,
-                    orthogonal_prompt,
-                    validate_response=_fine_validate_response,
-                    parse_response=default_parse_response,
-                    cot_level="none",
+                _with_timeout(
+                    simple_action_monitor(
+                        orthogonal_model,
+                        orthogonal_prompt,
+                        validate_response=_fine_validate_response,
+                        parse_response=default_parse_response,
+                        cot_level="none",
+                    )
                 ),
                 0.5,
             ),
-            simple_action_monitor(
-                OldActionMonitorArgs().model,
-                old_action_prompt,
-                validate_response=_fine_validate_response,
-                parse_response=default_parse_response,
-                cot_level="none",
+            _with_timeout(
+                simple_action_monitor(
+                    old_action_model,
+                    old_action_prompt,
+                    validate_response=_fine_validate_response,
+                    parse_response=default_parse_response,
+                    cot_level="none",
+                )
             ),
         ]
     )

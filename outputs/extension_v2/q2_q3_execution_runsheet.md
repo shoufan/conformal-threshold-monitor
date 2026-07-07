@@ -1,4 +1,12 @@
-# Q2 + Q3-A execution runsheet — BLOCKED on credentials (prep complete)
+# Q2 + Q3-A execution runsheet — EXECUTED 2026-07-07 (historical doc)
+
+**Update (2026-07-07): executed with a personal OpenRouter key ($10 credit).**
+Results: [`granularity_ablation.md`](granularity_ablation.md) and
+[`live_end_to_end.md`](live_end_to_end.md). Total spend $9.34 (Q2 $5.74 of
+$7.70 cap; Q3-A $3.61 of $5.40 cap), including ~$1.58 lost to three hung-batch
+attempts caused by the known oversized attack action in `8ec6d5e3…`; fixed
+with a request-level HTTP timeout in `monitor_extensions.py`. The section
+below is retained as the original blocker record.
 
 **Status (2026-07-06): execution blocked — the OpenRouter team key is dead.**
 `GET https://openrouter.ai/api/v1/key` returns `"User not found"` (three
